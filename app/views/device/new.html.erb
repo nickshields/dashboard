@@ -1,0 +1,21 @@
+<h1>Add new device</h1>
+
+<%= form_tag :action => 'create' do %>
+
+<p><label for = "device_name">Device Name:</label>
+<%= text_field 'devices', 'name' %></p>
+
+<p><label for = "device_ip">IP</label>:
+<%= text_field 'devices', 'ip_address' %></p>
+
+
+<p><label for = "device_connection_id">Subject</label>:
+<%= collection_select(:devices, :connection_id, @connections, :id, :name, prompt: true) %></p>
+
+<p><label for = "device_mac_address">Mac Address</label><br/>
+<%= text_area 'devices', 'mac_address' %></p>
+
+
+<%= submit_tag "Create" %>
+<% end -%>
+<%= link_to 'Back', {:action => 'list'} %>
