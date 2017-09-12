@@ -1,3 +1,47 @@
 <% if @devices.blank? %>
 <p>There are not any devices currently in the system.</p>
+<% else %>
+<h2 text-align: center>Current Connections:</h2>
+
+<table class='table'>
+  <tr>
+    <th>Name</th>
+    <th>IP Address</th>
+    <th>Mac Address</th>
+    <th>Connection Type</th>
+  </tr>
+
+   <% @devices.each do |c|  %>
+    <tr>
+      <td> <%= c.name %></td>
+      <td> <%= c.ip_address %></td>
+      <td> <%= c.mac_address %></td>
+      <td> <%= c.connection.name %></td>
+    </tr>
+  <% end %>
+</table>
+
+
+
+
+<h2>Who's Home?</h2>
+<ul class="list-group">
+<%if @devices.where("mac_address = '00:56:CD:06:83:09'").present? %>
+<li class="list-group-item">Nick</li>
 <% end %>
+<%if @devices.where("mac_address = '8C:F5:A3:16:90:26'").present? %>
+<li class="list-group-item">Colton</li>
+<% end %>
+<%if @devices.where("mac_address = 'A0:D7:95:34:B8:76'").present? %>
+<li class="list-group-item">Cameron</li>
+<% end %>
+<%if @devices.where("mac_address = 'I NEED JAKES MAC'").present? %>
+<li class="list-group-item">Jake</li>
+<% end %>
+<%if @devices.where("mac_address = '48:59:29:F8:A3:C4'").present? %>
+<li class="list-group-item">Eric</li>
+<% end %>
+</ul>
+<% end %>
+
+
