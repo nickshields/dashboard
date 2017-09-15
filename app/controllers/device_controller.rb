@@ -37,7 +37,9 @@ class DeviceController < ApplicationController
           device.connection_id = 2 if @data_hash['devices'][item]['type'] == 'wireless'
           device.save
       end
-
+      # client = Hue::Client.new
+      # light = client.lights.first
+      # light.on!
       redirect_to :action => 'list'
    end 
 
