@@ -16,8 +16,9 @@ Rails.application.routes.draw do
    get 'device/update'
    get 'device/show_subjects'
    get 'device/refresh'
-
-
+   post 'device/sends'
+   post 'device/volume_up'
+   post 'device/volume_down'
    # This route sends requests to our naked url to the *cool* action in the *gif* controller.
      root to: 'home#show'
 

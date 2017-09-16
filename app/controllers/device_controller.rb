@@ -1,14 +1,35 @@
 class DeviceController < ApplicationController
-   
+sp = SerialPort.new("/dev/ttyACM0", 115200, 8, 1, SerialPort::NONE)
    def list
    	 @devices = Device.all
    	 @connection = Connection.all
    end
 
+   def sends
+     puts "Hello World"
+     sp = SerialPort.new("/dev/ttyACM0", 115200, 8, 1, SerialPort::NONE)
+     sp.write("1637937167\n")
+     render:refresh
+   end
+
+   def volume_up
+     puts "Hello World"
+     sp = SerialPort.new("/dev/ttyACM0", 115200, 8, 1, SerialPort::NONE)
+     sp.write("1637888207\n")
+     render:refresh
+   end
+
+   def volume_down
+     puts "Hello World"
+     sp = SerialPort.new("/dev/ttyACM0", 115200, 8, 1, SerialPort::NONE)
+     sp.write("1637920847\n")
+     render:refresh
+   end
+
    def show_subjects
    @connection = Connection.find(params[:id])
 	end
-   
+
 	def show
 	  @device = Device.find(params[:id])
 	end
@@ -17,7 +38,7 @@ class DeviceController < ApplicationController
    @device = Device.find(params[:id])
    @connections = Connection.all
 	end
-   
+
    def new
    @device = Device.new
    @connections = Connection.all
@@ -40,19 +61,19 @@ class DeviceController < ApplicationController
       # client = Hue::Client.new
       # light = client.lights.first
       # light.on!
-      redirect_to :action => 'list'
-   end 
+      #redirect_to :action => 'list'
+   end
 
    def update
    @device = Device.find(params[:id])
-	
+
 	   if @device.update_attributes(device_params)
 	      redirect_to :action => 'show', :id => @device
 	   else
 	      @connections = Connection.all
 	      render :action => 'edit'
 	   end
-   
+
     end
 
 def book_param
@@ -67,14 +88,14 @@ end
 
    def create
    @device = Device.new(device_params)
-	
+
    if @device.save
       redirect_to :action => 'list'
    else
       @connections = Connection.all
       render :action => 'new'
    end
-   
+
 end
 
 def device_params

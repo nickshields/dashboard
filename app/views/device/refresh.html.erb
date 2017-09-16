@@ -1,1 +1,26 @@
-<p1>Testing</p1>
+<p>Testing</p>
+
+<h1>Please output some shit</h1>
+
+<%= button_to "Hello", :method => :post%>
+<button id="power" onclick="myFunction()">Power</button>
+<button id="volume_up" onclick="myFunction()">Volume Up</button>
+
+<button id="volume_down" type="button" class="btn btn-info">Volume Down</button>
+<script>
+$("#power").click(function(){
+    $.post("sends", function(data, status){
+    });
+});
+
+$("#volume_up").click(function(){
+    $.post("volume_up", function(data, status){
+    });
+});
+
+$("#volume_down").click(function(){
+    $.post("volume_down", function(data, status){
+    });
+});
+
+ </script>
