@@ -42,6 +42,19 @@ Rails.application.routes.draw do
   post 'commands/mute'
 
 
+  post 'commands/up'
+  post 'commands/down'
+  post 'commands/left'
+  post 'commands/right'
+  post 'commands/home'
+  post 'commands/power_mag'
+  post 'commands/keyboard'
+  post 'commands/ok'
+  post 'commands/back'
+  post 'commands/list'
+  post 'commands/vol_up'
+  post 'commands/vol_down'
+
    get 'commands/power_on'
    # This route sends requests to our naked url to the *cool* action in the *gif* controller.
      root to: 'home#show'

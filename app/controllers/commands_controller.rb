@@ -86,4 +86,69 @@ class CommandsController < ApplicationController
   end
 
 
+#Mag Controls start here
+
+
+def power_mag
+  sp = SerialPort.new("/dev/ttyACM0", 115200, 8, 1, SerialPort::NONE)
+  sp.write("908\n")
+end
+
+def keyboard
+  sp = SerialPort.new("/dev/ttyACM0", 115200, 8, 1, SerialPort::NONE)
+  sp.write("2968\n")
+end
+
+def up
+  sp = SerialPort.new("/dev/ttyACM0", 115200, 8, 1, SerialPort::NONE)
+  sp.write("957\n")
+end
+
+def down
+  sp = SerialPort.new("/dev/ttyACM0", 115200, 8, 1, SerialPort::NONE)
+  sp.write("3006\n")
+end
+
+def left
+  sp = SerialPort.new("/dev/ttyACM0", 115200, 8, 1, SerialPort::NONE)
+  sp.write("959\n")
+end
+
+def right
+  sp = SerialPort.new("/dev/ttyACM0", 115200, 8, 1, SerialPort::NONE)
+  sp.write("939\n")
+end
+
+def ok
+  sp = SerialPort.new("/dev/ttyACM0", 115200, 8, 1, SerialPort::NONE)
+  sp.write("2988\n")
+end
+
+def home
+  sp = SerialPort.new("/dev/ttyACM0", 115200, 8, 1, SerialPort::NONE)
+  sp.write("909\n")
+end
+
+def back
+  sp = SerialPort.new("/dev/ttyACM0", 115200, 8, 1, SerialPort::NONE)
+  sp.write("2959\n")
+end
+
+def list
+  sp = SerialPort.new("/dev/ttyACM0", 115200, 8, 1, SerialPort::NONE)
+  sp.write("906\n")
+end
+
+def vol_up
+  sp = SerialPort.new("/dev/ttyACM0", 115200, 8, 1, SerialPort::NONE)
+  sp.write("914\n")
+end
+
+def vol_down
+  sp = SerialPort.new("/dev/ttyACM0", 115200, 8, 1, SerialPort::NONE)
+  sp.write("2963\n")
+end
+
+
+
 end

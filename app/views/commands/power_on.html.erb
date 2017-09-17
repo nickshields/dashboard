@@ -17,9 +17,72 @@
 <button id="volume_down" type="button" class="btn btn-info">Volume Down</button>
 <button id="mute" type="button" class="btn btn-info">Mute</button>
 
+<br>
+
+<button id="power_mag" type="button" class="btn btn-info">Power</button>
+<button id="keyboard" type="button" class="btn btn-info">Keyboard</button>
+<button id="up" type="button" class="btn btn-info">Up</button>
+<button id="down" type="button" class="btn btn-info">Down</button>
+<button id="left" type="button" class="btn btn-info">Left</button>
+<button id="right" type="button" class="btn btn-info">Right</button>
+<button id="ok" type="button" class="btn btn-info">OK</button>
+<button id="home" type="button" class="btn btn-info">Home</button>
+<button id="back" type="button" class="btn btn-info">Back</button>
+<button id="list" type="button" class="btn btn-info">List</button>
+<button id="vol_up" type="button" class="btn btn-info">Volume Up</button>
+<button id="vol_down" type="button" class="btn btn-info">Volume Down</button>
 
 
 <script>
+$("#power_mag").click(function(){
+    $.post("power_mag", function(data, status){
+    });
+});
+$("#keyboard").click(function(){
+    $.post("keyboard", function(data, status){
+    });
+});
+$("#up").click(function(){
+    $.post("up", function(data, status){
+    });
+});
+$("#down").click(function(){
+    $.post("down", function(data, status){
+    });
+});
+$("#left").click(function(){
+    $.post("left", function(data, status){
+    });
+});
+$("#right").click(function(){
+    $.post("right", function(data, status){
+    });
+});
+$("#ok").click(function(){
+    $.post("ok", function(data, status){
+    });
+});
+$("#home").click(function(){
+    $.post("home", function(data, status){
+    });
+});
+$("#back").click(function(){
+    $.post("back", function(data, status){
+    });
+});
+$("#list").click(function(){
+    $.post("list", function(data, status){
+    });
+});
+$("#vol_up").click(function(){
+    $.post("vol_up", function(data, status){
+    });
+});
+$("#vol_down").click(function(){
+    $.post("vol_down", function(data, status){
+    });
+});
+
 $("#power").click(function(){
     $.post("power", function(data, status){
     });
