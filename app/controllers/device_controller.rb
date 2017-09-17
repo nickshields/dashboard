@@ -1,5 +1,5 @@
 class DeviceController < ApplicationController
-sp = SerialPort.new("/dev/ttyACM0", 115200, 8, 1, SerialPort::NONE)
+sp = SerialPort.new("/dev/cu.usbmodem1421", 115200, 8, 1, SerialPort::NONE)
    def list
    	 @devices = Device.all
    	 @connection = Connection.all
@@ -7,21 +7,21 @@ sp = SerialPort.new("/dev/ttyACM0", 115200, 8, 1, SerialPort::NONE)
 
    def sends
      puts "Hello World"
-     sp = SerialPort.new("/dev/ttyACM0", 115200, 8, 1, SerialPort::NONE)
+     sp = SerialPort.new("/dev/cu.usbmodem1421", 115200, 8, 1, SerialPort::NONE)
      sp.write("1637937167\n")
      render:refresh
    end
 
    def volume_up
      puts "Hello World"
-     sp = SerialPort.new("/dev/ttyACM0", 115200, 8, 1, SerialPort::NONE)
+     sp = SerialPort.new("/dev/cu.usbmodem1421", 115200, 8, 1, SerialPort::NONE)
      sp.write("1637888207\n")
      render:refresh
    end
 
    def volume_down
      puts "Hello World"
-     sp = SerialPort.new("/dev/ttyACM0", 115200, 8, 1, SerialPort::NONE)
+     sp = SerialPort.new("/dev/cu.usbmodem1421", 115200, 8, 1, SerialPort::NONE)
      sp.write("1637920847\n")
      render:refresh
    end

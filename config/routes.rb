@@ -19,6 +19,30 @@ Rails.application.routes.draw do
    post 'device/sends'
    post 'device/volume_up'
    post 'device/volume_down'
+
+
+
+  #This is for the commands view
+  post 'commands/power'
+  post 'commands/volume_up'
+  post 'commands/volume_down'
+  post 'commands/input'
+  post 'commands/one'
+  post 'commands/two'
+  post 'commands/three'
+  post 'commands/four'
+  post 'commands/five'
+  post 'commands/six'
+  post 'commands/seven'
+  post 'commands/eight'
+  post 'commands/nine'
+  post 'commands/zero'
+  post 'commands/dot'
+  post 'commands/recall'
+  post 'commands/mute'
+
+
+   get 'commands/power_on'
    # This route sends requests to our naked url to the *cool* action in the *gif* controller.
      root to: 'home#show'
 
