@@ -4,4 +4,9 @@ class HomeController < ApplicationController
      @devices = Device.all
    	 @connection = Connection.all
    end
+
+   def eric
+     @devices = Device.all
+   	 @connection = Connection.all
+   end
 end

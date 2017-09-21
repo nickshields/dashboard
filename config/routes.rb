@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   #root 'home#show'
 
    get 'home/show'
+   get 'home/eric'
    get 'device/new'
    post 'device/create'
    patch 'device/update'
@@ -16,7 +17,7 @@ Rails.application.routes.draw do
    get 'device/update'
    get 'device/show_subjects'
    get 'device/refresh'
-
+   get 'device/home'
 
    # This route sends requests to our naked url to the *cool* action in the *gif* controller.
      root to: 'home#show'
