@@ -1,26 +1,18 @@
 Rails.application.routes.draw do
-  get 'users/new'
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  get 'device/list'
-  #root 'home#show'
-
-   get 'home/show'
-   get 'home/eric'
-   get 'device/new'
-   post 'device/create'
-   patch 'device/update'
-   get 'device/list'
-   get 'device/show'
-   get 'device/edit'
-   get 'device/delete'
-   get 'device/update'
-   get 'device/show_subjects'
-   get 'device/refresh'
+   get 'users/new'
+   post 'device/refresh'
    get 'device/home'
 
-   # This route sends requests to our naked url to the *cool* action in the *gif* controller.
-     root to: 'home#show'
+   get 'home/index'
+   post 'home/command'
+   post 'home/light'
+
+   #We need to redirect the post request for the lights for them to work on the homepage.
+   post '/light' => 'home#light'
+   post '/command' => 'home#command'
+
+   # the root route allows us to define our homepage.
+   root to: 'home#index'
 
   # I've created a gif controller so I have a page I can secure later.
   # This is optional (as is the root to: above).

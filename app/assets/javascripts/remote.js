@@ -1,11 +1,15 @@
 $(document).ready(function() {
 	$('.remote-round').click(function() {
-		console.log($(this).attr("value"));
-	});
+		var data = $(this).attr("value")
+		$.post("command", {"command": data});
+		});
+
 	$('.remote-square').click(function() {
-		console.log($(this).attr("value"));
-	});
+		var data = $(this).attr("value")
+		$.post("command", {"command": data});
+		});
 	$('.remote-round-sm').click(function() {
-		console.log($(this).attr("value"));
-	})
+		var data = $(this).attr("value")
+		$.post("command", {"command": data});
+		});
 });
