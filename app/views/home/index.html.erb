@@ -5,7 +5,7 @@
 	<div class="well">
 		<center>
 			<h1>Weather</h1>
-			<h3>Waterloo: </h3><h3>Temp Goes here</h3> 
+			<h3>Waterloo: </h3><h3>15°C</h3> 
 		</center>
 	</div>
 	<div class="well" id="hueController">
@@ -467,35 +467,27 @@
   </div>
 </div>
 
-<!--Connected Devices Modal-->
-<div id="moreDevices" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Schedule</h4>
+  <div class="modal fade" id="myModal2" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Welcome to Homedash!</h4>
+        </div>
+        <div class="modal-body">
+          <p>I normally don't say anything here, but for the time being, I have temporarily disabled user authentication.
+          	That's why you're able to view this page right now. I'm only doing this so that I can show off my work to potential hiring managers. To anyone viewing this app <strong> please be nice.</strong> I would appreciate it if you didn't toggle my lights at 3am.
+          	Also note that support for more devices and better layout styling are coming very soon.
+          	Thanks!
+          
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
       </div>
-      <div class="modal-body">
-      	<center>
-			<h1>Connected Devices</h1>
-			<p>List of devices currently connected to my router</p>
-			<div class="table-responsive">
-				<table class="table table-striped">
-					<tr><th>Name</th><th>IP</th><th>Mac Address</th><th>Type</th></tr>
-					<tbody id="connectedDevices">
-						<!--Devices on the network will be added here-->
-					</tbody>
-				</table>
-			</div>
-			<button id="deviceList" class="refreshBtn" align="right">Refresh</button>
-		</center>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
+      
     </div>
-
   </div>
-</div>
